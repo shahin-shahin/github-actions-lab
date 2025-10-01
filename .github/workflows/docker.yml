@@ -37,6 +37,6 @@ jobs:
       # Push Image
       - name: Push to DockerHub latest
         run: |
-          docker tag mynginx:test ${{ secrets.DOCKER_USERNAME }}/mynginx:latest
+          docker tag mynginx:test ${{ secrets.DOCKER_USERNAME }}/mynginx:${{ github.sha }}
           docker push ${{ secrets.DOCKER_USERNAME }}/mynginx:latest
 
